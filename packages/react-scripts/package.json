@@ -1,6 +1,6 @@
 {
   "name": "@rcline/react-scripts",
-  "version": "3.1.2",
+  "version": "3.1.2-rcline.3",
   "description": "Fork of: Configuration and scripts for Create React App.",
   "repository": {
     "type": "git",
