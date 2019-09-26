@@ -8,6 +8,8 @@
 // @remove-on-eject-end
 'use strict';
 
+const mcwrWebpackUtil = require('./mcwr.webpack.util'); // TODO(rcline): Fork change
+
 const fs = require('fs');
 const isWsl = require('is-wsl');
 const path = require('path');
@@ -129,12 +131,14 @@ module.exports = function(webpackEnv) {
           loader: require.resolve('resolve-url-loader'),
           options: {
             sourceMap: isEnvProduction && shouldUseSourceMap,
+            engine: 'rework', // TODO(rcline): Fork change
           },
         },
         {
           loader: require.resolve(preProcessor),
           options: {
             sourceMap: true,
+            importer: mcwrWebpackUtil.importer, // TODO(rcline): Fork change
           },
         }
       );
